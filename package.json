@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/geriasd2/cv#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "nodemailer": "^4.6.8"
   }
 }
