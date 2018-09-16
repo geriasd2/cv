@@ -104,7 +104,7 @@ header .social li {
    padding: 0;
 }
 header .social li a { color: #fff; }
-header .social li a:hover { color: #11ABB0; }
+header .social li a:hover { color: #3267b1; }
 
 /* scrolldown link */
 header .scrolldown a {
@@ -126,7 +126,7 @@ header .scrolldown a {
    -o-transition: all .3s ease-in-out;
    transition: all .3s ease-in-out;
 }
-header .scrolldown a:hover { color: #11ABB0; }
+header .scrolldown a:hover { color: #3267b1; }
 
 /* primary navigation
 --------------------------------------------------------------------- */
@@ -203,7 +203,7 @@ ul#nav li.current a { color: #3267b1; }
 }
 
 #resume a, #resume a:visited  { color: #fff; }
-#resume a:hover, #resume a:focus { color: #11ABB0; }
+#resume a:hover, #resume a:focus { color: #3267b1; }
 
 #resume h2 {
    font: 22px/30px 'opensans-bold', sans-serif;
@@ -258,7 +258,7 @@ ul#nav li.current a { color: #3267b1; }
    overflow: hidden;
 }
 
-#resume a, #resume a:visited  { color: #11ABB0; }
+#resume a, #resume a:visited  { color: #3267b1; }
 #resume a:hover, #resume a:focus { color: #313131; }
 
 #resume h1 {
@@ -267,7 +267,7 @@ ul#nav li.current a { color: #3267b1; }
    letter-spacing: 1px;
 }
 #resume h1 span {
-   border-bottom: 3px solid #11ABB0;
+   border-bottom: 3px solid #3267b1;
    padding-bottom: 6px;
 }
 #resume h3 {
@@ -818,7 +818,7 @@ call-to-action .button {
 }
 #contact .section-head { margin-bottom: 42px; }
 
-#contact a, #contact a:visited  { color: #11ABB0; }
+#contact a, #contact a:visited  { color: #3267b1; }
 #contact a:hover, #contact a:focus { color: #fff; }
 
 #contact h1 {
