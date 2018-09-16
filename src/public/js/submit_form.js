@@ -15,6 +15,7 @@ function submitForm(oFormElement){
             loading_animation_container.setAttribute("class", "circle-loader load-complete");
             loading_animation.setAttribute("style", "display: block;");
             document.getElementById("submitbutton").remove();
+            document.getElementById("captcha").remove();
             return
         }
         window.location.replace("http://stackoverflow.com");

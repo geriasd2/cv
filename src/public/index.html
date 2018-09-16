@@ -34,7 +34,7 @@
 
     <!-- Captcha -->
     
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src='https://www.google.com/recaptcha/api.js?hl=en-GB'></script>
 
 </head>
 
@@ -194,30 +194,28 @@
 					<fieldset>
 
                     <div>
-                            <label for="contactName">Name <span class="required">*</span></label>
+                            <label for="contactName">Name</label>
                             <input type="text" value="" size="35" id="contactName" name="contactName" required=true> 
                     </div>
 
                     <div>
-                            <label for="contactEmail">Email <span class="required">*</span></label>
+                            <label for="contactEmail">Email</label>
                             <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="" size="35" id="contactEmail" name="contactEmail" required=true>
                     </div>
 
                     <div>
-                            <label for="contactSubject">Subject <span class="required">*</span></label>
+                            <label for="contactSubject">Subject</label>
                             <input type="text" value="" size="35" id="contactSubject" name="contactSubject" required=true>
                     </div>
 
                     <div>
-                        <label for="contactMessage">Message <span class="required">*</span></label>
+                        <label for="contactMessage">Message</label>
                         <textarea cols="50" rows="15" id="contactMessage" name="contactMessage" required=true></textarea>
                     </div>
                     
+                    <div class="g-recaptcha" id="captcha" data-theme="dark" data-sitekey="6LelhXAUAAAAAPM1YPiK1hwA_sgV_MdQEeypN42o"></div>
 
                     <button type="submit" id="submitbutton">Submit</button>
-
-                    <div class="g-recaptcha" id="captcha" data-sitekey="6LelhXAUAAAAAPM1YPiK1hwA_sgV_MdQEeypN42o"></div>
-
 
 					</fieldset>
                 </form> <!-- Form End -->
