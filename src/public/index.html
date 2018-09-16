@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-
+    
+   
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>Gubcsi Gergely</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Gubcsi Gergely</title>
+   <meta name="description" content="">
+   <meta name="author" content="">
 
    <!-- Mobile Specific Metas
    ================================================== -->
@@ -19,14 +21,20 @@
    <link rel="stylesheet" href="css/layout.css">
    <link rel="stylesheet" href="css/media-queries.css">
    <link rel="stylesheet" href="css/magnific-popup.css">
+   <link rel="stylesheet" href="css/loading.css">
+
 
    <!-- Script
    ================================================== -->
-	<script src="js/modernizr.js"></script>
+    <script src="js/modernizr.js"></script>
 
    <!-- Favicons
 	================================================== -->
-	<link rel="shortcut icon" href="favicon.png" >
+    <link rel="shortcut icon" href="favicon.png" >
+
+    <!-- Captcha -->
+    
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
 </head>
 
@@ -58,7 +66,7 @@
       </div>
 
       <p class="scrolldown">
-         <a class="smoothscroll" href="#education"><i class="icon-down-circle"></i></a>
+         <a class="smoothscroll" href="#resume"><i class="icon-down-circle"></i></a>
       </p>
 
    </header> <!-- Header End -->
@@ -108,21 +116,19 @@
                 
                 <h3>E-group</h3>
                 <ul class="disc">
-                    <li>Sample text<em class="date">&nbsp;&nbsp;&nbsp;February 2018 - (January 2020)</em></li>
+                    <li>Software developer on different projects involving cryptography<em class="date">&nbsp;&nbsp;&nbsp;September 2018 - </em></li>
                 </ul>
                 <p>
-                    Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.
-                    Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.
+                   My main task at E-group is to develop secure protocols for different applications.
                 </p>
 
-                <h3>Nokia Solutions and Networks</h3>
+                <h3>Nokia Solutions and Network</h3>
                 <ul class="disc">
-                    <li>Business Intelligence Dashboard Project<em class="date">&nbsp;&nbsp;&nbsp;February 2018 - (January 2020)</em></li>
+                    <li>R&D engineer trainee at the Business Intelligence Dashboard Project<em class="date">&nbsp;&nbsp;&nbsp; March 2017 - August 2018</em></li>
                 </ul>
-                
                 <p>
-                Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.
-                Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.
+                During my time in Nokia, I've mainly worked on data mining scripts written in python, which normalized data from several sources automatically.
+                My job also involved setting up automatized pipelines for the project and managing cloud VM-s.
                 </p>
 
             </div> <!-- item end -->
@@ -136,29 +142,25 @@
         
                 <div class="row item" style="margin-left: 5%">
                     
-                    <h3>Programming languages</h3>
+                    <h3>Programming languages and frameworks</h3>
                     <ul class="disc">
                         <li>Python</li>
                         <li>C++</li>
-                        <li>Java</li>
+                        <li>CUDA, MPI, OpenMP</li>
+                        <li>Java (Java EE)</li>
                         <li>Javascript (Node js)</li>
+                        <li>Matlab</li>
 
                     </ul>
-                    <p>
-                        Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.
-                        Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.
-                    </p>
     
-                    <h3>"Normal" Languages & other</h3>
+                    <h3>"Normal" Languages & other skills</h3>
                     <ul class="disc">
-                        <li>English Advanced (C1) complex exam (2013)<em class="date">&nbsp;&nbsp;&nbsp;February 2018 - (January 2020)</em></li>
+                        <li>English Advanced (C1) complex exam (2013)</li>
+                        <li>Git</li>
+                        <li>Test driven developement</li>
+                        <li>Agile methodology</li>
                     </ul>
-                    
-                    <p>
-                    Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.
-                    Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.Sample text.
-                    </p>
-                    
+
                 </div> <!-- item end -->
             </div>
         </div>
@@ -179,11 +181,6 @@
 
             <div class="ten columns">
 
-                  <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                  eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                  voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-                  </p>
-
             </div>
 
          </div>
@@ -193,89 +190,39 @@
             <div class="eight columns">
 
                <!-- form -->
-               <form action="/mailme" method="post" id="contactForm" name="contactForm">
+               <form action="/mailme" method="POST" id="contactForm" name="contactForm" onsubmit="return submitForm(this);">
 					<fieldset>
 
-                  <div>
-						   <label for="contactName">Name <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactName" name="contactName">
-                  </div>
+                    <div>
+                            <label for="contactName">Name <span class="required">*</span></label>
+                            <input type="text" value="" size="35" id="contactName" name="contactName" required=true> 
+                    </div>
 
-                  <div>
-						   <label for="contactEmail">Email <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
-                  </div>
+                    <div>
+                            <label for="contactEmail">Email <span class="required">*</span></label>
+                            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="" size="35" id="contactEmail" name="contactEmail" required=true>
+                    </div>
 
-                  <div>
-						   <label for="contactSubject">Subject</label>
-						   <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
-                  </div>
+                    <div>
+                            <label for="contactSubject">Subject <span class="required">*</span></label>
+                            <input type="text" value="" size="35" id="contactSubject" name="contactSubject" required=true>
+                    </div>
 
-                  <div>
-                     <label for="contactMessage">Message <span class="required">*</span></label>
-                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
-                  </div>
+                    <div>
+                        <label for="contactMessage">Message <span class="required">*</span></label>
+                        <textarea cols="50" rows="15" id="contactMessage" name="contactMessage" required=true></textarea>
+                    </div>
+                    
 
-                  <div>
-                     <button onclick="emailMe({})">Submit</button>
-                     <span id="image-loader">
-                        <img alt="" src="images/loader.gif">
-                     </span>
-                  </div>
+                    <button type="submit" id="submitbutton">Submit</button>
+
+                    <div class="g-recaptcha" id="captcha" data-sitekey="6LelhXAUAAAAAPM1YPiK1hwA_sgV_MdQEeypN42o"></div>
+
 
 					</fieldset>
-				   </form> <!-- Form End -->
-
-               <!-- contact-warning -->
-               <div id="message-warning"> Error boy</div>
-               <!-- contact-success -->
-				   <div id="message-success">
-                  <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-				   </div>
+                </form> <!-- Form End -->
 
             </div>
-
-
-            <aside class="four columns footer-widgets">
-
-               <div class="widget widget_contact">
-
-					   <h4>Address and Phone</h4>
-					   <p class="address">
-						   Jonathan Doe<br>
-						   1600 Amphitheatre Parkway <br>
-						   Mountain View, CA 94043 US<br>
-						   <span>(123) 456-7890</span>
-					   </p>
-
-				   </div>
-
-               <div class="widget widget_tweets">
-
-                  <h4 class="widget-title">Latest Tweets</h4>
-
-                  <ul id="twitter">
-                     <li>
-                        <span>
-                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
-                        <a href="#">http://t.co/CGIrdxIlI3</a>
-                        </span>
-                        <b><a href="#">2 Days Ago</a></b>
-                     </li>
-                     <li>
-                        <span>
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                        eaque ipsa quae ab illo inventore veritatis et quasi
-                        <a href="#">http://t.co/CGIrdxIlI3</a>
-                        </span>
-                        <b><a href="#">3 Days Ago</a></b>
-                     </li>
-                  </ul>
-
-		         </div>
-
-            </aside>
 
       </div>
 
@@ -293,8 +240,7 @@
    <script src="js/jquery.fittext.js"></script>
    <script src="js/magnific-popup.js"></script>
    <script src="js/init.js"></script>
-   <script src="js/mailme.js"></script>
-
+   <script src="js/submit_form.js"></script>
 </body>
 
 </html>
