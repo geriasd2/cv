@@ -187,7 +187,7 @@
 
                <!-- form -->
                <form action="/mailme" method="POST" id="contactForm" name="contactForm" onsubmit="return submitForm(this);">
-					<fieldset>
+					<fieldset id="fieldset">
 
                     <div>
                             <label for="contactName">Name</label>
@@ -211,7 +211,10 @@
                     
                     <div class="g-recaptcha" id="captcha" data-theme="dark" data-sitekey="6LelhXAUAAAAAPM1YPiK1hwA_sgV_MdQEeypN42o"></div>
 
-                    <button type="submit" id="submitbutton">Submit</button>
+                    <div>
+                        <button type="submit" id="submitbutton">Submit</button>
+                    </div>
+                    
 
 					</fieldset>
                 </form> <!-- Form End -->

@@ -1,12 +1,12 @@
 function submitForm(oFormElement){
     let loading_animation_container = document.createElement("div");
     loading_animation_container.setAttribute("class", "circle-loader");
+    loading_animation_container.setAttribute("id", "loading-animation-container");
     
     let loading_animation = document.createElement("div");
     loading_animation.setAttribute("class", "checkmark draw");
 
     loading_animation_container.appendChild(loading_animation);
-    document.getElementById("contactForm").appendChild(loading_animation_container);
     
     var xhr = new XMLHttpRequest();
     xhr.onload = function(){
@@ -18,7 +18,10 @@ function submitForm(oFormElement){
             document.getElementById("captcha").remove();
             return
         }
-        window.location.replace("http://stackoverflow.com");
+        document.getElementById("loading-animation-container").remove();
+        window.alert("Could not send the email");
+
+        //window.location.replace("http://stackoverflow.com");
     }
     xhr.open(oFormElement.method, oFormElement.action, true);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -29,6 +32,15 @@ function submitForm(oFormElement){
         data[key] = val;
     });
 
-    xhr.send(JSON.stringify(data));
+    if (data["g-recaptcha-response"] === ""){
+        window.alert("Please check the captcha")
+    }
+    else{
+        
+        document.getElementById("fieldset").appendChild(loading_animation_container);
+    
+        xhr.send(JSON.stringify(data));
+    }
+
     return false;
 }
