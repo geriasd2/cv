@@ -4,10 +4,12 @@ const app = express();
 const nodemailer = require('nodemailer');
 const bodyParser = require("body-parser");
 const request = require("request");
+const helmet = require("helmet")
 
 app.use(express.urlencoded());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname + "/public")));
+app.use(helmet())
 
 const secret = process.env.captchaSecret;
 
